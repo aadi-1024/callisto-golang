@@ -2,16 +2,15 @@ package main
 
 import (
 	"fmt"
-	"os"
-	"strconv"
 	"github.com/aadi-1024/callisto-golang/routers"
 	"github.com/gin-gonic/gin"
+	"os"
+	"strconv"
 )
-
-
 
 func main() {
 	var PORT int
+
 	if len(os.Args) == 1 {
 		PORT = 8080
 	} else {
@@ -21,6 +20,7 @@ func main() {
 			fmt.Printf("Error: %v\n", err)
 		}
 	}
+	
 	engine := gin.Default()
 	engine.GET("/", func(ctx *gin.Context) {
 		ctx.String(200, "Get on /")
